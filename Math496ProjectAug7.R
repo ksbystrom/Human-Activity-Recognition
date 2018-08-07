@@ -317,6 +317,21 @@
   plot.harmonic(X.k.max,3,ts,acq.freq,"blue")
   length(x.n.max)
 
+  ##########ALICE'S CODE TO PASTE IN
+  plot.frequency.spectrum <- function(X.k, xlimits=c(0,length(X.k))) {
+    plot.data  <- cbind(0:(length(X.k)-1), Mod(X.k))
+
+    # TODO: why this scaling is necessary?
+    plot.data[2:length(X.k),2] <- 2*plot.data[2:length(X.k),2] 
+
+    plot(plot.data, t="h", lwd=2, main="", 
+         xlab="Frequency (Hz)", ylab="Strength", 
+         xlim=xlimits, ylim=c(0,max(Mod(plot.data[,2]))))
+  }
+
+  plot.frequency.spectrum(x.n.max,xlimits=c(0,acq.freq/2))
+  ##########END OF ALICE SECTION
+
 ##############################################################
 #14 CREATE MATRX OF ACTIVITIES WITH THE FOURIER TRANFORMS OF THEIR RANDOM PROJECTIONS (PREDICTED & ACTUAL)
 ##############################################################
