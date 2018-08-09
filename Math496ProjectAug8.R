@@ -1,4 +1,4 @@
-#Author: Kristen Bystrom
+#Author: Kristen Bystrom and Alice Roberts
 #Purpose: For Math 496 Final Project, determines the activity of a human using smartphone sensors
 #Last Date Modified: 2018-08-07
 
